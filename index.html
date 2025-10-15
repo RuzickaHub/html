@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Person - Interactive CV</title>
+  <title>Ace Ventura - Životopis detektiva zvířat</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
     
     :root {
-      --primary: #3b82f6;
-      --primary-dark: #2563eb;
-      --secondary: #10b981;
+      --primary: #ff6347;
+      --primary-dark: #e5533d;
+      --secondary: #32cd32;
       --dark: #1e293b;
       --light: #f8fafc;
       --gray: #94a3b8;
@@ -118,13 +118,13 @@
 </head>
 <body class="antialiased">
   <div class="container mx-auto max-w-5xl px-4 py-8">
-    <!-- Print Button -->
-    <button onclick="window.print()" class="no-print print-button fixed right-6 bottom-6 bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-full shadow-lg flex items-center z-50">
-      <i class="fas fa-print mr-2"></i> Print CV
+    <!-- Tiskové tlačítko -->
+    <button onclick="window.print()" class="no-print print-button fixed right-6 bottom-6 bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-4 rounded-full shadow-lg flex items-center z-50">
+      <i class="fas fa-print mr-2"></i> Vytisknout životopis
     </button>
 
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl shadow-lg overflow-hidden mb-8">
+    <!-- Hlavička -->
+    <header class="bg-gradient-to-r from-red-600 to-red-500 text-white rounded-xl shadow-lg overflow-hidden mb-8">
       <div class="px-8 py-12 relative">
         <div class="absolute top-0 right-0 opacity-20">
           <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,25 +132,25 @@
           </svg>
         </div>
         <div class="relative z-10">
-          <h1 class="text-4xl font-bold mb-2">Random Person</h1>
-          <p class="text-blue-100 mb-6">Random Specialist</p>
+          <h1 class="text-4xl font-bold mb-2">Ace Ventura</h1>
+          <p class="text-red-100 mb-6">Detektiv zvířat par excellence</p>
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="flex items-center">
-              <i class="fas fa-birthday-cake mr-3 text-blue-200"></i>
-              <span>5. 9. 1999</span>
+              <i class="fas fa-birthday-cake mr-3 text-red-200"></i>
+              <span>Neznámé (věčně mladý)</span>
             </div>
             <div class="flex items-center">
-              <i class="fas fa-map-marker-alt mr-3 text-blue-200"></i>
-              <span>Random City</span>
+              <i class="fas fa-map-marker-alt mr-3 text-red-200"></i>
+              <span>Miami, Florida</span>
             </div>
             <div class="flex items-center">
-              <i class="fas fa-phone mr-3 text-blue-200"></i>
-              <span>419 557 374</span>
+              <i class="fas fa-phone mr-3 text-red-200"></i>
+              <span>555-PÁTRÁNÍ</span>
             </div>
             <div class="flex items-center">
-              <i class="fas fa-envelope mr-3 text-blue-200"></i>
-              <a href="mailto:random@email.com" class="hover:underline">random@email.com</a>
+              <i class="fas fa-envelope mr-3 text-red-200"></i>
+              <a href="mailto:ace@detektivzvirat.cz" class="hover:underline">ace@detektivzvirat.cz</a>
             </div>
           </div>
         </div>
@@ -158,95 +158,33 @@
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <!-- Left Column -->
+      <!-- Levý sloupec -->
       <div class="lg:col-span-1 space-y-8">
-        <!-- About Me -->
+        <!-- O mně -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
           <h2 class="section-title text-xl font-bold">O mně</h2>
-          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="text-gray-700 mb-4">Tak jo! Jsem Ace Ventura, nejlepší detektiv zvířat na světě. Mluvím s chlupáči, luštím záhady a nosím ty nejlepší havajské košile. Žádné zvíře není příliš malé, žádný případ příliš šílený!</p>
           <div class="flex space-x-3">
-            <a href="#" class="text-blue-500 hover:text-blue-700">
+            <a href="#" class="text-red-500 hover:text-red-700">
               <i class="fab fa-linkedin-in text-lg"></i>
             </a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">
+            <a href="#" class="text-red-500 hover:text-red-700">
               <i class="fab fa-github text-lg"></i>
             </a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">
-              <i class="fab fa-behance text-lg"></i>
+            <a href="#" class="text-red-500 hover:text-red-700">
+              <i class="fab fa-tiktok text-lg"></i>
             </a>
           </div>
         </div>
 
-        <!-- Skills -->
+        <!-- Dovednosti -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
           <h2 class="section-title text-xl font-bold">Technické dovednosti</h2>
           <div class="space-y-4">
             <div>
               <div class="flex justify-between mb-1">
-                <span class="font-medium">Skill A</span>
-                <span class="text-gray-500">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 95%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="font-medium">Skill B</span>
-                <span class="text-gray-500">Intermediate</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="font-medium">Skill C</span>
+                <span class="font-medium">Komunikace se zvířaty</span>
                 <span class="text-gray-500">Expert</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="font-medium">Skill D</span>
-                <span class="text-gray-500">Beginner</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="font-medium">Skill E</span>
-                <span class="text-gray-500">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 65%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
-          <h2 class="section-title text-xl font-bold">Vzdělání</h2>
-          <div class="timeline-item">
-            <div class="font-bold text-blue-600">Random University</div>
-            <div class="text-gray-500 mb-2">2002 - 2012</div>
-            <p class="text-gray-700">Major: Random Field</p>
-          </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
-          <h2 class="section-title text-xl font-bold">Jazyky</h2>
-          <div class="space-y-3">
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="font-medium">Language 1</span>
-                <span class="text-gray-500">Native</span>
               </div>
               <div class="skill-bar">
                 <div class="skill-progress" style="width: 100%"></div>
@@ -254,206 +192,212 @@
             </div>
             <div>
               <div class="flex justify-between mb-1">
-                <span class="font-medium">Language 2</span>
-                <span class="text-gray-500">Intermediate</span>
+                <span class="font-medium">Účesový styl</span>
+                <span class="text-gray-500">Ikonický</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Pátrání</span>
+                <span class="text-gray-500">Pokročilý</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Hlášky</span>
+                <span class="text-gray-500">Mistr</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 99%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Výběr havajských košilí</span>
+                <span class="text-gray-500">Legendární</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 100%"></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Interests -->
+        <!-- Vzdělání -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Vzdělání</h2>
+          <div class="timeline-item">
+            <div class="font-bold text-red-600">Škola tvrdých ran</div>
+            <div class="text-gray-500 mb-2">1990 - 1994</div>
+            <p class="text-gray-700">Obor: Detekce zvířat a excentrické chování</p>
+          </div>
+        </div>
+
+        <!-- Jazyky -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Jazyky</h2>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Čeština</span>
+                <span class="text-gray-500">Rodilý mluvčí</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 100%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Zvířečtina</span>
+                <span class="text-gray-500">Plynulý</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zájmy -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
           <h2 class="section-title text-xl font-bold">Zájmy</h2>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm flex items-center">
-              <i class="fas fa-paint-brush mr-1"></i> Interest 1
+            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-paw mr-1"></i> Záchrana zvířat
             </span>
             <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm flex items-center">
-              <i class="fas fa-robot mr-1"></i> Interest 2
+              <i class="fas fa-tshirt mr-1"></i> Výrazná móda
             </span>
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
-              <i class="fas fa-music mr-1"></i> Interest 3
-            </span>
+            <div class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-theater-masks mr-1"></i> Dramatické vstupy
+            </div>
             <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm flex items-center">
-              <i class="fas fa-cube mr-1"></i> Interest 4
+              <i class="fas fa-dove mr-1"></i> Komunikace s ptáky
             </span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column -->
+      <!-- Pravý sloupec -->
       <div class="lg:col-span-2 space-y-8">
-        <!-- Experience -->
+        <!-- Pracovní zkušenosti -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
           <h2 class="section-title text-xl font-bold">Pracovní zkušenosti</h2>
           <div class="space-y-6">
-            <!-- Experience 1 -->
+            <!-- Zkušenost 1 -->
             <div class="timeline-item">
               <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                <h3 class="font-bold text-lg text-blue-600">Company 1</h3>
-                <span class="text-blue-500 font-medium">2021 – present</span>
+                <h3 class="font-bold text-lg text-red-600">Agentura detektivů zvířat Miami</h3>
+                <span class="text-red-500 font-medium">1994 – Současnost</span>
               </div>
-              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-700 mt-1">Vypátral ztracená zvířata od papoušků po delfíny. Vyřešil případ delfína Sněhuláka. Proslulý nekonvenčními metodami a 100% úspěšností (pokud entuziasmus rovná se výsledkům).</p>
               <div class="mt-2 flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Pátrání po zvířatech</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Sledování</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Komunikace se zvířaty</span>
               </div>
             </div>
 
-            <!-- Experience 2 -->
+            <!-- Zkušenost 2 -->
             <div class="timeline-item">
               <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                <h3 class="font-bold text-lg text-blue-600">Company 2</h3>
-                <span class="text-blue-500 font-medium">2010 – 2010</span>
+                <h3 class="font-bold text-lg text-red-600">Záchranář zvířat na volné noze</h3>
+                <span class="text-red-500 font-medium">1992 – 1994</span>
               </div>
-              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-700 mt-1">Zachránil ztracené leguány, kočky a jednoho zmateného aligátora. Vyvinul techniku „mluvit se zvířaty“. Občas si přivydělával jako model účesů.</p>
               <div class="mt-2 flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Záchranné operace</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Improvizace</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Pohyby vlasy</span>
               </div>
             </div>
 
-            <!-- Experience 3 -->
+            <!-- Zkušenost 3 -->
             <div class="timeline-item">
               <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                <h3 class="font-bold text-lg text-blue-600">Company 3</h3>
-                <span class="text-blue-500 font-medium">2023</span>
+                <h3 class="font-bold text-lg text-red-600">Konzultant ambasády Nambutu</h3>
+                <span class="text-red-500 font-medium">1996</span>
               </div>
-              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-700 mt-1">Pátral po zmizelém posvátném netopýrovi. Proplétal se mezinárodními intrikami s grácií. Personál ambasády zůstal zmatený nad svými kariérními volbami.</p>
               <div class="mt-2 flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Diplomacie</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Pátrání po netopýrech</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Kulturní citlivost</span>
               </div>
             </div>
 
-            <!-- Experience 4 -->
-            <div class="timeline-item">
-              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                <h3 class="font-bold text-lg text-blue-600">Company 4</h3>
-                <span class="text-blue-500 font-medium">2018 – 2013</span>
-              </div>
-              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
-                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
-              </div>
-            </div>
-
-            <!-- Other experiences (collapsible) -->
+            <!-- Další zkušenosti (rozbalovací) -->
             <div x-data="{ expanded: false }">
-              <button @click="expanded = !expanded" class="flex items-center text-blue-600 font-medium mb-4">
-                <span>Další zkušenosti</span>
+              <button @click="expanded = !expanded" class="flex items-center text-red-600 font-medium mb-4">
+                <span>Další dobrodružství</span>
                 <i :class="expanded ? 'fa-chevron-up' : 'fa-chevron-down'" class="fas ml-2 text-sm"></i>
               </button>
               
               <div x-show="expanded" x-collapse class="space-y-6">
-                <!-- Experience 5 -->
+                <!-- Zkušenost 4 -->
                 <div class="timeline-item">
                   <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                    <h3 class="font-bold text-lg text-blue-600">Company 5</h3>
-                    <span class="text-blue-500 font-medium">2013</span>
+                    <h3 class="font-bold text-lg text-red-600">Hlídkování na dvorku</h3>
+                    <span class="text-red-500 font-medium">1990</span>
                   </div>
-                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-
-                <!-- Experience 6 -->
-                <div class="timeline-item">
-                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                    <h3 class="font-bold text-lg text-blue-600">Company 6</h3>
-                    <span class="text-blue-500 font-medium">2010</span>
-                  </div>
-                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-
-                <!-- Experience 7 -->
-                <div class="timeline-item">
-                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                    <h3 class="font-bold text-lg text-blue-600">Company 3</h3>
-                    <span class="text-blue-500 font-medium">2021</span>
-                  </div>
-                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-
-                <!-- Experience 8 -->
-                <div class="timeline-item">
-                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                    <h3 class="font-bold text-lg text-blue-600">Company 8</h3>
-                    <span class="text-blue-500 font-medium">2013</span>
-                  </div>
-                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p class="text-gray-700 mt-1">Kariéru začal záchranou sousedových křečků. Naučil se vyjednávat s tvrdohlavými veverkami. Začal kultivovat ikonický účes.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Detailed About -->
+        <!-- Podrobněji o mně -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
           <h2 class="section-title text-xl font-bold">Podrobněji o mně</h2>
           <div class="space-y-4 text-gray-700">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Nejsem jen detektiv zvířat; jsem životní styl. Moje metody jsou neortodoxní, můj styl je nepřekonatelný a moje láska ke zvířatům nemá obdoby. Jednou jsem přesvědčil holuba, aby svědčil u soudu (neoficiálně, samozřejmě).</p>
+            <p>Ať už jde o pátrání po zmizelém delfínovi nebo okouzlení hada, do každého případu vnáším vášeň, šmrnc a pochybné módní rozhodnutí. Moje motto? „Tak jo!“</p>
+            <p>Jsem známý tím, že narušuji večírky, mluvím s opicemi a občas uvíznu v nosorožci. Žádná výzva není příliš velká, žádné zvíře příliš malé.</p>
           </div>
         </div>
 
-        <!-- Projects -->
+        <!-- Projekty -->
         <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
-          <h2 class="section-title text-xl font-bold">Projekty & Portfolio</h2>
+          <h2 class="section-title text-xl font-bold">Projekty a portfolio</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <!-- Project 1 -->
-            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+            <!-- Projekt 1 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-red-300 transition-colors">
               <div class="flex items-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                  <i class="fas fa-laptop-code"></i>
+                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3">
+                  <i class="fas fa-fish"></i>
                 </div>
-                <h3 class="font-bold">Project A</h3>
+                <h3 class="font-bold">Záchrana Sněhuláka</h3>
               </div>
-              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-600 text-sm">Nalezl maskota Miami Dolphins v podezřelém akváriu. Přelstil gaunery a nevrlého trenéra. Zakončeno vítězným tancem.</p>
             </div>
             
-            <!-- Project 2 -->
-            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+            <!-- Projekt 2 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-red-300 transition-colors">
               <div class="flex items-center mb-2">
                 <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
-                  <i class="fas fa-cube"></i>
+                  <i class="fas fa-bat"></i>
                 </div>
-                <h3 class="font-bold">Project B</h3>
+                <h3 class="font-bold">Hon na Shikaku</h3>
               </div>
-              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-600 text-sm">Nalezl posvátného netopýra pro kmen Nambutu. Unikl kopím, okouzlil vesničany a přežil pochybné džunglové menu.</p>
             </div>
             
-            <!-- Project 3 -->
-            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+            <!-- Projekt 3 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-red-300 transition-colors">
               <div class="flex items-center mb-2">
                 <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
-                  <i class="fas fa-paint-brush"></i>
+                  <i class="fas fa-paw"></i>
                 </div>
-                <h3 class="font-bold">Project C</h3>
+                <h3 class="font-bold">Pronásledování papouška</h3>
               </div>
-              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            
-            <!-- Project 4 -->
-            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-              <div class="flex items-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-3">
-                  <i class="fas fa-music"></i>
-                </div>
-                <h3 class="font-bold">Project D</h3>
-              </div>
-              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-gray-600 text-sm">Vypátral upovídaného papouška, který věděl příliš mnoho. Vyjednával s opeřeným informátorem pomocí krekrů a šarmu.</p>
             </div>
           </div>
         </div>
@@ -461,17 +405,16 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Patička -->
   <footer class="no-print mt-12 py-6 text-center text-gray-500 text-sm">
-    <p>© 2023 Random Person. Všechna práva vyhrazena.</p>
-    <p class="mt-1">Poslední aktualizace: červen 2023</p>
+    <p>© 2025 Ace Ventura. Všechna zvířata vyhrazena.</p>
+    <p class="mt-1">Poslední aktualizace: říjen 2025</p>
   </footer>
 
-  <!-- Alpine.js for interactivity -->
+  <!-- Alpine.js pro interaktivitu -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
   
   <script>
-    // Animate skill bars on scroll
     document.addEventListener('DOMContentLoaded', function() {
       const skillBars = document.querySelectorAll('.skill-progress');
       
@@ -485,7 +428,6 @@
         });
       };
       
-      // Run animation when skills section comes into view
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -500,7 +442,6 @@
         observer.observe(skillsSection);
       }
       
-      // Print button animation
       const printBtn = document.querySelector('.print-button');
       if (printBtn) {
         printBtn.addEventListener('mouseenter', () => {
