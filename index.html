@@ -1,1 +1,517 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Person - Interactive CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+    
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #10b981;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f1f5f9;
+      color: var(--dark);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: -16px;
+      width: 2px;
+      background: var(--primary);
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item:last-child::after {
+      display: none;
+    }
+    
+    .skill-bar {
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 4px;
+      transition: width 1s ease-in-out;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .print-button {
+      transition: all 0.3s ease;
+    }
+    
+    .print-button:hover {
+      transform: scale(1.05);
+    }
+    
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      
+      body {
+        background-color: white;
+      }
+      
+      .container {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="container mx-auto max-w-5xl px-4 py-8">
+    <!-- Print Button -->
+    <button onclick="window.print()" class="no-print print-button fixed right-6 bottom-6 bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-full shadow-lg flex items-center z-50">
+      <i class="fas fa-print mr-2"></i> Print CV
+    </button>
 
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl shadow-lg overflow-hidden mb-8">
+      <div class="px-8 py-12 relative">
+        <div class="absolute top-0 right-0 opacity-20">
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 0C44.7715 0 0 44.7715 0 100C0 155.229 44.7715 200 100 200C155.229 200 200 155.229 200 100C200 44.7715 155.229 0 100 0ZM100 40C127.614 40 150 62.3858 150 90C150 117.614 127.614 140 100 140C72.3858 140 50 117.614 50 90C50 62.3858 72.3858 40 100 40Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="relative z-10">
+          <h1 class="text-4xl font-bold mb-2">Random Person</h1>
+          <p class="text-blue-100 mb-6">Random Specialist</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="flex items-center">
+              <i class="fas fa-birthday-cake mr-3 text-blue-200"></i>
+              <span>5. 9. 1999</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-3 text-blue-200"></i>
+              <span>Random City</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-phone mr-3 text-blue-200"></i>
+              <span>419 557 374</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-blue-200"></i>
+              <a href="mailto:random@email.com" class="hover:underline">random@email.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Left Column -->
+      <div class="lg:col-span-1 space-y-8">
+        <!-- About Me -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">O mně</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <i class="fab fa-behance text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Technické dovednosti</h2>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Skill A</span>
+                <span class="text-gray-500">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Skill B</span>
+                <span class="text-gray-500">Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Skill C</span>
+                <span class="text-gray-500">Expert</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Skill D</span>
+                <span class="text-gray-500">Beginner</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Skill E</span>
+                <span class="text-gray-500">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Vzdělání</h2>
+          <div class="timeline-item">
+            <div class="font-bold text-blue-600">Random University</div>
+            <div class="text-gray-500 mb-2">2002 - 2012</div>
+            <p class="text-gray-700">Major: Random Field</p>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Jazyky</h2>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Language 1</span>
+                <span class="text-gray-500">Native</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 100%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">Language 2</span>
+                <span class="text-gray-500">Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Zájmy</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-paint-brush mr-1"></i> Interest 1
+            </span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-robot mr-1"></i> Interest 2
+            </span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-music mr-1"></i> Interest 3
+            </span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm flex items-center">
+              <i class="fas fa-cube mr-1"></i> Interest 4
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Experience -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Pracovní zkušenosti</h2>
+          <div class="space-y-6">
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <h3 class="font-bold text-lg text-blue-600">Company 1</h3>
+                <span class="text-blue-500 font-medium">2021 – present</span>
+              </div>
+              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <h3 class="font-bold text-lg text-blue-600">Company 2</h3>
+                <span class="text-blue-500 font-medium">2010 – 2010</span>
+              </div>
+              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+              </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="timeline-item">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <h3 class="font-bold text-lg text-blue-600">Company 3</h3>
+                <span class="text-blue-500 font-medium">2023</span>
+              </div>
+              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+              </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="timeline-item">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <h3 class="font-bold text-lg text-blue-600">Company 4</h3>
+                <span class="text-blue-500 font-medium">2018 – 2013</span>
+              </div>
+              <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag X</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Y</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tag Z</span>
+              </div>
+            </div>
+
+            <!-- Other experiences (collapsible) -->
+            <div x-data="{ expanded: false }">
+              <button @click="expanded = !expanded" class="flex items-center text-blue-600 font-medium mb-4">
+                <span>Další zkušenosti</span>
+                <i :class="expanded ? 'fa-chevron-up' : 'fa-chevron-down'" class="fas ml-2 text-sm"></i>
+              </button>
+              
+              <div x-show="expanded" x-collapse class="space-y-6">
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                    <h3 class="font-bold text-lg text-blue-600">Company 5</h3>
+                    <span class="text-blue-500 font-medium">2013</span>
+                  </div>
+                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <!-- Experience 6 -->
+                <div class="timeline-item">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                    <h3 class="font-bold text-lg text-blue-600">Company 6</h3>
+                    <span class="text-blue-500 font-medium">2010</span>
+                  </div>
+                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <!-- Experience 7 -->
+                <div class="timeline-item">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                    <h3 class="font-bold text-lg text-blue-600">Company 3</h3>
+                    <span class="text-blue-500 font-medium">2021</span>
+                  </div>
+                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <!-- Experience 8 -->
+                <div class="timeline-item">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                    <h3 class="font-bold text-lg text-blue-600">Company 8</h3>
+                    <span class="text-blue-500 font-medium">2013</span>
+                  </div>
+                  <p class="text-gray-700 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed About -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Podrobněji o mně</h2>
+          <div class="space-y-4 text-gray-700">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+          <h2 class="section-title text-xl font-bold">Projekty & Portfolio</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <!-- Project 1 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div class="flex items-center mb-2">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="font-bold">Project A</h3>
+              </div>
+              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div class="flex items-center mb-2">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                  <i class="fas fa-cube"></i>
+                </div>
+                <h3 class="font-bold">Project B</h3>
+              </div>
+              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div class="flex items-center mb-2">
+                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="font-bold">Project C</h3>
+              </div>
+              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div class="flex items-center mb-2">
+                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-3">
+                  <i class="fas fa-music"></i>
+                </div>
+                <h3 class="font-bold">Project D</h3>
+              </div>
+              <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="no-print mt-12 py-6 text-center text-gray-500 text-sm">
+    <p>© 2023 Random Person. Všechna práva vyhrazena.</p>
+    <p class="mt-1">Poslední aktualizace: červen 2023</p>
+  </footer>
+
+  <!-- Alpine.js for interactivity -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+  
+  <script>
+    // Animate skill bars on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      const animateSkills = () => {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 100);
+        });
+      };
+      
+      // Run animation when skills section comes into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateSkills();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      const skillsSection = document.querySelector('.bg-white.rounded-xl.shadow-md.p-6');
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+      
+      // Print button animation
+      const printBtn = document.querySelector('.print-button');
+      if (printBtn) {
+        printBtn.addEventListener('mouseenter', () => {
+          printBtn.querySelector('i').classList.add('fa-bounce');
+        });
+        
+        printBtn.addEventListener('mouseleave', () => {
+          printBtn.querySelector('i').classList.remove('fa-bounce');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
